@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int saldo_awal,pilihan,transfer,ambil_uang;
+    pilihan=0;
+
+    cout<<"Silakan masukan saldo : ";
+    cin>>saldo_awal;
+    cout<<endl<<"MENU ATM"<<endl;
+    cout<<"1. Cek Saldo"<<endl;
+    cout<<"2. Transfer"<<endl;
+    cout<<"3. Ambil Tunai"<<endl;
+    cout<<"4. Keluar"<<endl;
+
+
+
+    while(pilihan!=4){
+        cout<<endl<<"Silakan Pilih menu : ";
+        cin>>pilihan;
+        switch(pilihan){
+            case 1 :
+                cout<<endl<<"Sisa Saldo Anda : "<<saldo_awal<<endl;
+                break;
+            case 2 :
+                cout<<endl<<"Masukan Nominal Transfer : ";
+                cin>>transfer;
+
+                if(saldo_awal>=transfer){
+                    saldo_awal=saldo_awal-transfer;
+                    cout<<"       Sukses ..."<<endl;
+                    cout<<"Transfer Sebesar : "<<transfer<<endl;
+                    cout<<"Sisa Saldo Anda  : "<<saldo_awal<<endl;
+                }else{
+                    cout<<endl<<"Maap Saldo Anda Tidak Mencukupi"<<endl;
+                }
+            case 3 :
+                cout<<endl<<"Masukan Nominal Uang : ";
+                cin>>ambil_uang;
+
+                if(saldo_awal>=ambil_uang){
+                    saldo_awal=saldo_awal-ambil_uang;
+                    cout<<"       Sukses ..."<<endl;
+                    cout<<"Ambil Uang Sebesar : "<<ambil_uang<<endl;
+                    cout<<"Sisa Saldo Anda    : "<<saldo_awal<<endl;
+                }else{
+                    cout<<endl<<"Maap Saldo Anda Tidak Mencukupi"<<endl;
+                }
+        }
+    }
+    cout<<"Terima Kasih .."<<endl;
+
+return 0;
+}
